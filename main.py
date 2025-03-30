@@ -8,7 +8,7 @@ from google.genai.types import (GenerateContentConfig, GenerationConfig,
 
 
 import sys
-
+import os
 def main():
     diff_input = sys.stdin.read()
 
@@ -16,12 +16,11 @@ def main():
         print("No input received.")
         return
 
-    # Process the diff as needed, here's an example of just printing file changes
-    print("Processing git diff...\n")
-
-    for line in diff_input.splitlines():
-        if line.startswith('+++ ') or line.startswith('--- '):
-            print(line)
+    from ui import display_artifact
+    from client import App
+    client = App(api_key=os.getenv('GOOGLE_API_KEY') or "")
+    artifact = client.run(diff_input)
+    display_artifact(artifact)
 
 if __name__ == "__main__":
     main()

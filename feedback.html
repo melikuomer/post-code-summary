@@ -1,0 +1,106 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Code Feedback Details</title>
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                max-width: 800px;
+                margin: 40px auto;
+                padding: 20px;
+                background: #f5f5f5;
+            }
+            h1 {
+                color: #2c3e50;
+                text-align: center;
+                border-bottom: 2px solid #3498db;
+                padding-bottom: 10px;
+            }
+            .feedback-card {
+                background: white;
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 20px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .line-number {
+                color: #e74c3c;
+                font-size: 1.2em;
+                margin: 0;
+            }
+            .feedback-type {
+                display: inline-block;
+                padding: 5px 10px;
+                background: #3498db;
+                color: white;
+                border-radius: 4px;
+                font-size: 0.9em;
+            }
+            .code-block {
+                background: #f8f9fa;
+                padding: 10px;
+                border-radius: 4px;
+                font-family: monospace;
+                border-left: 4px solid #2ecc71;
+            }
+            .feedback-text {
+                color: #34495e;
+                line-height: 1.6;
+            }
+        </style>
+    </head>
+    <body>
+    <h1>Code Feedback Details</h1>
+    
+    <div class="feedback-card">
+        <h2>Overview</h2>
+        <p class="feedback-text">
+        <p style="color: #e74c3c;">🚫 Blunders: 1</p>
+        <p style="color: #f1c40f;">⚠️ Missed Wins: 0</p>
+        <p style="color: #3498db;">💡 Improvements: 0</p>
+        <p style="color: #2ecc71;">✨ Brilliant Moves: 2</p>
+        <p style="color: #9b59b6;">❗ Book Moves: 2</p>
+        </p>
+    </div>
+    
+        <div class="feedback-card">
+        <h3 class="file-name">Line main.py</h3>
+            <h3 class="line-number">Line 14</h3>
+            <span class="feedback-type" style="background-color: #2ecc71">✨ brilliant</span>
+            <div class="code-block">    # Process the diff as needed, here's an example of just printing file changes</div>
+            <p class="feedback-text">You completely removed the placeholder code and implemented the core logic of your application. That's a **brilliant** move! You are now processing diff, running analysis with LLM, and displaying results.</p>
+        </div>
+        
+        <div class="feedback-card">
+        <h3 class="file-name">Line main.py</h3>
+            <h3 class="line-number">Line 19</h3>
+            <span class="feedback-type" style="background-color: #2ecc71">✨ brilliant</span>
+            <div class="code-block">    from ui import display_artifact</div>
+            <p class="feedback-text">Splitting code into `ui` and `client` modules is a great idea. Good job on separating concerns **brilliant**</p>
+        </div>
+        
+        <div class="feedback-card">
+        <h3 class="file-name">Line main.py</h3>
+            <h3 class="line-number">Line 20</h3>
+            <span class="feedback-type" style="background-color: #9b59b6">❗ book_move</span>
+            <div class="code-block">    from client import App</div>
+            <p class="feedback-text">Creating `App` class and calling that client to retrieve `artifact` is a great move! `App` name is pretty general consider renaming it.</p>
+        </div>
+        
+        <div class="feedback-card">
+        <h3 class="file-name">Line pyproject.toml</h3>
+            <h3 class="line-number">Line 9</h3>
+            <span class="feedback-type" style="background-color: #e74c3c">🚫 blunder</span>
+            <div class="code-block">    "pre-commit>=4.2.0",</div>
+            <p class="feedback-text">You removed `pre-commit` dependency from `pyproject.toml` which is a **blunder** because you also removed `.pre-commit-config.yaml`. You should not remove `pre-commit` dependency.</p>
+        </div>
+        
+        <div class="feedback-card">
+        <h3 class="file-name">Line pyproject.toml</h3>
+            <h3 class="line-number">Line 9</h3>
+            <span class="feedback-type" style="background-color: #9b59b6">❗ book_move</span>
+            <div class="code-block">    "pre-commit>=4.2.0",</div>
+            <p class="feedback-text">Upgrading to `pydantic>=2.11.1` is a good choice since it is a popular and actively maintained library for data validation and settings management. This is a **book_move**.</p>
+        </div>
+        </body></html>
