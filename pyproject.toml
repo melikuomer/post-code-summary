@@ -9,3 +9,7 @@ dependencies = [
     "google-genai>=1.8.0",
     "pydantic>=2.11.1",
 ]
+
+
+[project.scripts]
+post-code-summary = "pre_commit_hooks.post-code-summary"
