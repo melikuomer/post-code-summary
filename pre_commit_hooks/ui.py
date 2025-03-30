@@ -1,7 +1,7 @@
 from typing import List
 from collections import Counter
 import os
-from utils.model import Artifact
+from model import Artifact
 
 def generate_html(artifact: Artifact) -> None:
     html_content = """
