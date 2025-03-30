@@ -4,8 +4,8 @@ from google.genai.types import (GenerateContentConfig, GenerationConfig,
                                 HarmBlockThreshold, HarmCategory,
                                 SafetySetting, ToolConfig)
 
-from model import Artifact  # Your Pydantic model
-from prompt import prompt   # Your system prompt string
+from pre_commit_hooks.model import Artifact  # Your Pydantic model
+from pre_commit_hooks.prompt import prompt   # Your system prompt string
 from typing import List, Any
 
 class App:
