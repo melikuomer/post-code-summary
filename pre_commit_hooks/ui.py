@@ -2,6 +2,7 @@ from typing import List
 from collections import Counter
 import os
 from pre_commit_hooks.model import Artifact
+from pre_commit_hooks.notification import send_notification
 
 def generate_html(artifact: Artifact) -> None:
     html_content = """
@@ -115,7 +116,6 @@ def display_artifact(artifact: Artifact) -> None:
     summary = ", ".join(f"{count} {feedback_type}" for feedback_type, count in feedback_counts.items())
 
     # Send single notification with summary
-    from notification import send_notification
     send_notification("Code Feedback Summary", summary)
 
     # Generate HTML
