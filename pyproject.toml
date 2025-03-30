@@ -12,4 +12,4 @@ dependencies = [
 
 
 [project.scripts]
-post-code-summary = "pre_commit_hooks.post-code-summary"
+post-code-summary = "pre_commit_hooks.post_code_summary:main"
