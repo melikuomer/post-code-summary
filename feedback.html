@@ -56,51 +56,43 @@
     <div class="feedback-card">
         <h2>Overview</h2>
         <p class="feedback-text">
-        <p style="color: #e74c3c;">🚫 Blunders: 1</p>
+        <p style="color: #e74c3c;">🚫 Blunders: 0</p>
         <p style="color: #f1c40f;">⚠️ Missed Wins: 0</p>
         <p style="color: #3498db;">💡 Improvements: 0</p>
-        <p style="color: #2ecc71;">✨ Brilliant Moves: 2</p>
-        <p style="color: #9b59b6;">❗ Book Moves: 2</p>
+        <p style="color: #2ecc71;">✨ Brilliant Moves: 0</p>
+        <p style="color: #9b59b6;">❗ Book Moves: 4</p>
         </p>
     </div>
     
         <div class="feedback-card">
-        <h3 class="file-name">Line main.py</h3>
-            <h3 class="line-number">Line 14</h3>
-            <span class="feedback-type" style="background-color: #2ecc71">✨ brilliant</span>
-            <div class="code-block">    # Process the diff as needed, here's an example of just printing file changes</div>
-            <p class="feedback-text">You completely removed the placeholder code and implemented the core logic of your application. That's a **brilliant** move! You are now processing diff, running analysis with LLM, and displaying results.</p>
+        <h3 class="file-name">Line .gitignore</h3>
+            <h3 class="line-number">Line 3</h3>
+            <span class="feedback-type" style="background-color: #9b59b6">❗ book_move</span>
+            <div class="code-block">*.so</div>
+            <p class="feedback-text">Adding .DS_Store to gitignore. This is a good practice to keep your repository clean.</p>
         </div>
         
         <div class="feedback-card">
         <h3 class="file-name">Line main.py</h3>
-            <h3 class="line-number">Line 19</h3>
-            <span class="feedback-type" style="background-color: #2ecc71">✨ brilliant</span>
-            <div class="code-block">    from ui import display_artifact</div>
-            <p class="feedback-text">Splitting code into `ui` and `client` modules is a great idea. Good job on separating concerns **brilliant**</p>
+            <h3 class="line-number">Line 11</h3>
+            <span class="feedback-type" style="background-color: #9b59b6">❗ book_move</span>
+            <div class="code-block">def main():</div>
+            <p class="feedback-text">Reading the diff from stdin is unreliable in many envs. Using `git diff` directly is a much more robust approach.</p>
         </div>
         
         <div class="feedback-card">
         <h3 class="file-name">Line main.py</h3>
             <h3 class="line-number">Line 20</h3>
             <span class="feedback-type" style="background-color: #9b59b6">❗ book_move</span>
-            <div class="code-block">    from client import App</div>
-            <p class="feedback-text">Creating `App` class and calling that client to retrieve `artifact` is a great move! `App` name is pretty general consider renaming it.</p>
+            <div class="code-block">    display_artifact(artifact)</div>
+            <p class="feedback-text">Good job adding a return code to main. This is best practice.</p>
         </div>
         
         <div class="feedback-card">
         <h3 class="file-name">Line pyproject.toml</h3>
-            <h3 class="line-number">Line 9</h3>
-            <span class="feedback-type" style="background-color: #e74c3c">🚫 blunder</span>
-            <div class="code-block">    "pre-commit>=4.2.0",</div>
-            <p class="feedback-text">You removed `pre-commit` dependency from `pyproject.toml` which is a **blunder** because you also removed `.pre-commit-config.yaml`. You should not remove `pre-commit` dependency.</p>
-        </div>
-        
-        <div class="feedback-card">
-        <h3 class="file-name">Line pyproject.toml</h3>
-            <h3 class="line-number">Line 9</h3>
+            <h3 class="line-number">Line 2</h3>
             <span class="feedback-type" style="background-color: #9b59b6">❗ book_move</span>
-            <div class="code-block">    "pre-commit>=4.2.0",</div>
-            <p class="feedback-text">Upgrading to `pydantic>=2.11.1` is a good choice since it is a popular and actively maintained library for data validation and settings management. This is a **book_move**.</p>
+            <div class="code-block">name = "idler"</div>
+            <p class="feedback-text">Renaming the project shows attention to detail and is a great practice when starting a new phase of development.</p>
         </div>
         </body></html>
