@@ -4,7 +4,7 @@ import os
 from pre_commit_hooks.model import Artifact
 from pre_commit_hooks.notification import send_notification
 
-def generate_html(artifact: Artifact) -> None:
+def generate_html(artifact: Artifact) -> str:
     html_content = """
     <!DOCTYPE html>
     <html>
@@ -104,9 +104,9 @@ def generate_html(artifact: Artifact) -> None:
         """
 
     html_content += "</body></html>"
-
     with open("feedback.html", "w") as f:
         f.write(html_content)
+    return html_content
 
 def display_artifact(artifact: Artifact) -> None:
     # Count feedback types

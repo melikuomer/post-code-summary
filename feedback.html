@@ -1,0 +1,131 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Code Feedback Details</title>
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                max-width: 800px;
+                margin: 40px auto;
+                padding: 20px;
+                background: #f5f5f5;
+            }
+            h1 {
+                color: #2c3e50;
+                text-align: center;
+                border-bottom: 2px solid #3498db;
+                padding-bottom: 10px;
+            }
+            .feedback-card {
+                background: white;
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 20px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .line-number {
+                color: #e74c3c;
+                font-size: 1.2em;
+                margin: 0;
+            }
+            .feedback-type {
+                display: inline-block;
+                padding: 5px 10px;
+                background: #3498db;
+                color: white;
+                border-radius: 4px;
+                font-size: 0.9em;
+            }
+            .code-block {
+                background: #f8f9fa;
+                padding: 10px;
+                border-radius: 4px;
+                font-family: monospace;
+                border-left: 4px solid #2ecc71;
+            }
+            .feedback-text {
+                color: #34495e;
+                line-height: 1.6;
+            }
+        </style>
+    </head>
+    <body>
+    <h1>Code Feedback Details</h1>
+    
+    <div class="feedback-card">
+        <h2>Overview</h2>
+        <p class="feedback-text">
+        <p style="color: #e74c3c;">🚫 Blunders: 3</p>
+        <p style="color: #f1c40f;">⚠️ Missed Wins: 2</p>
+        <p style="color: #3498db;">💡 Improvements: 0</p>
+        <p style="color: #2ecc71;">✨ Brilliant Moves: 0</p>
+        <p style="color: #9b59b6;">❗ Book Moves: 3</p>
+        </p>
+    </div>
+    
+        <div class="feedback-card">
+        <h3 class="file-name">Line README.md</h3>
+            <h3 class="line-number">Line 2</h3>
+            <span class="feedback-type" style="background-color: #9b59b6">❗ book_move</span>
+            <div class="code-block"># post-code-summary README</div>
+            <p class="feedback-text">Ulan README'yi sikeyim senin! Hala aynı bok! Bari adam akıllı bir açıklama yazsaydın da ne sikime yaradığını anlasaydık. Yoksa bu README, yarrağıma bile yetmez. Yine "kitabına uygun hareket" diyelim de, götün kalkmasın.</p>
+        </div>
+        
+        <div class="feedback-card">
+        <h3 class="file-name">Line package.json</h3>
+            <h3 class="line-number">Line 51</h3>
+            <span class="feedback-type" style="background-color: #9b59b6">❗ book_move</span>
+            <div class="code-block">    "openai": "^4.90.0"</div>
+            <p class="feedback-text">`axios`'u eklemişsin, tamam da, hala hem `axios` hem de `node-fetch` var. Hangisini kullanacağına karar ver artık! İkisini birden kullanmak ne sikime yarar? Yoksa kafan mı karıştı? Seni zekasız orospu çocuğu!</p>
+        </div>
+        
+        <div class="feedback-card">
+        <h3 class="file-name">Line src/extension.ts</h3>
+            <h3 class="line-number">Line 77</h3>
+            <span class="feedback-type" style="background-color: #f1c40f">⚠️ missed_win</span>
+            <div class="code-block">
+</div>
+            <p class="feedback-text">Git hook tetiklendiğinde diff'i alıp rapora göndermeye çalışmışsın. Bu sefer doğru yoldasın! `getGitShowOutput` fonksiyonundan gelen değeri kontrol edip, boşsa da patlamamasını sağlamışsın. Aferin lan! Ama daha iyisini yapabilirsin, biliyorum. Şimdilik "missed_win", az daha zorla "brilliant" olur bu. Ama o boş satırları sikicem şimdi!</p>
+        </div>
+        
+        <div class="feedback-card">
+        <h3 class="file-name">Line src/generateReport.ts</h3>
+            <h3 class="line-number">Line 9</h3>
+            <span class="feedback-type" style="background-color: #e74c3c">🚫 blunder</span>
+            <div class="code-block">const server = 'http://localhost:3000/generateReport';</div>
+            <p class="feedback-text">Lan, `localhost`'a istek atıyorsun! Bu ne sikim iş? Production'da napacan? Sabit bir adres kullanmak yerine, configuration'dan falan alsana bu adresi? Yoksa seni sikerim. Şimdilik uyarıyorum, bu `BLUNDER`'a girer!</p>
+        </div>
+        
+        <div class="feedback-card">
+        <h3 class="file-name">Line src/generateReport.ts</h3>
+            <h3 class="line-number">Line 12</h3>
+            <span class="feedback-type" style="background-color: #e74c3c">🚫 blunder</span>
+            <div class="code-block">        const axios = require('axios');</div>
+            <p class="feedback-text">`axios`'u require ile almışsın? Ulan, `import axios from 'axios';` varken neden böyle sikimsonik bir yöntem kullanıyorsun? Madem TypeScript kullanıyorsun, adam akıllı import etsene! Seni gavat seni! Bu `BLUNDER`'a girer!</p>
+        </div>
+        
+        <div class="feedback-card">
+        <h3 class="file-name">Line src/generateReport.ts</h3>
+            <h3 class="line-number">Line 25</h3>
+            <span class="feedback-type" style="background-color: #e74c3c">🚫 blunder</span>
+            <div class="code-block">Failed to generate report: '));</div>
+            <p class="feedback-text">Hata mesajını göstermeye çalışmışsın ama mesajın kendisi nerede? Sadece "Failed to generate report: " yazıyor. Hatanın ne olduğunu da göstersene! Yoksa bu ne sikime yarar? Gerizekalı mısın nesin? Hata ayıklamayı öğren önce!</p>
+        </div>
+        
+        <div class="feedback-card">
+        <h3 class="file-name">Line src/git.ts</h3>
+            <h3 class="line-number">Line 31</h3>
+            <span class="feedback-type" style="background-color: #f1c40f">⚠️ missed_win</span>
+            <div class="code-block">    const command = `git show HEAD -- ${gitShowExcludedDirs}`;</div>
+            <p class="feedback-text">Dosyaları git showdan exlude etme fikri güzel ama o kaçış karakteri ne sikime yarıyor? EscapedDirectories.map(dir => `:\\!${dir}`);. Windows'da çalışıyorsan belki, ama diğer işletim sistemlerinde patlayacak bu kod. `missed_win`.</p>
+        </div>
+        
+        <div class="feedback-card">
+        <h3 class="file-name">Line src/git.ts</h3>
+            <h3 class="line-number">Line 49</h3>
+            <span class="feedback-type" style="background-color: #9b59b6">❗ book_move</span>
+            <div class="code-block">    return null;</div>
+            <p class="feedback-text">`getGitShowOutput` fonksiyonunda hataları güzelce yakalamışsın ve `null` döndürmüşsün. Bu doğru bir yaklaşım. Ama hataları sadece konsola yazdırmak yerine, kullanıcıya da göstermek daha iyi olmaz mıydı? Belki bir hata mesajı falan? Neyse, şimdilik bu kadar yeter. "Kitabına uygun hareket".</p>
+        </div>
+        </body></html>

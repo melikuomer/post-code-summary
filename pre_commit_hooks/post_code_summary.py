@@ -10,16 +10,16 @@ def main(argv: Sequence[str] | None = None) -> int:
         help='Filenames pre-commit believes are changed.',
     )
     args = parser.parse_args(argv)
-
-    import subprocess
-    diff_input = subprocess.run(('git', 'diff', '-U5'),
-            stdout=subprocess.PIPE,
-            stderr=subprocess.DEVNULL,
-            encoding='utf-8',
-            check=True,
-            input='\0'.join(args.filenames),
-        ).stdout
-
+    print(args.filenames)
+    try:
+        from git import Repo
+        repo = Repo('.')
+        head_commit = repo.head.commit
+        diff_input = repo.git.diff(head_commit.parents[0], head_commit, unified=5)
+    except Exception as e:
+        print(f"Unexpected error occurred: {e}")
+        raise
+    print("test",diff_input)
     from pre_commit_hooks.ui import display_artifact
     from pre_commit_hooks.client import App
     client = App(api_key=os.getenv('GOOGLE_API_KEY') or "")

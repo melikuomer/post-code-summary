@@ -76,7 +76,10 @@ class App:
             if self.__check_blocked(response):
                 pass
             # Print the response text (assuming the response text is available as .text)
-            return Artifact.model_validate_json(response.text)
+            if response.text:
+                return Artifact.model_validate_json(response.text)
+            else:
+                return "Error"
             # Save model parts on exit
         except Exception as e:
             raise Exception(f"An error occurred: {e}")

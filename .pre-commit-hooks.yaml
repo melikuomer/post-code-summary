@@ -2,6 +2,7 @@
     name: generate code summary
     description: provides feedback
     entry: post-code-summary
+    verbose: true
     language: python
     stages: [pre-commit, manual]
     minimum_pre_commit_version: 3.2.0
